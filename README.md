@@ -64,6 +64,7 @@ docker run -p 8000:8000 karma-box
 
 ## Request Format
 
+```json
 {
   "user_id": "string",
   "date": "YYYY-MM-DD",
@@ -78,8 +79,9 @@ docker run -p 8000:8000 karma-box
     "karma_earned_today": 40
   }
 }
-
+```
 ## Response Format
+``` json
 {
   "user_id": "string",
   "surprise_unlocked": true,
@@ -89,7 +91,7 @@ docker run -p 8000:8000 karma-box
   "box_type": "rule-based",
   "status": "delivered"
 }
-
+```
 ## 🧠 Conditions & Logic
 - System checks metrics against config.json rules.
 
