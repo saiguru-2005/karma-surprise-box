@@ -34,5 +34,79 @@ This project is designed to incentivize user engagement on a platform by deliver
 | Database      | SQLite            |
 | Model  | Random Forest (scikit-learn) |
 
--
+## 🧑‍💻 Installation
 
+### 🔁 Clone the Repository
+
+```bash
+git clone https://github.com/your-username/karma-surprise-box.git
+cd karma-surprise-box
+```
+### Docker Deployment
+## Build the Docker Image
+
+Build the Docker Image
+
+docker build -t karma-box .
+
+Run the Container
+
+docker run -p 8000:8000 karma-box
+
+### API Endpoints
+
+| Endpoint              | Method | Description                            |
+| --------------------- | ------ | -------------------------------------- |
+| `/health`             | GET    | Returns `{"status": "ok"}`             |
+| `/version`            | GET    | Returns model version and feature info |
+| `/check-surprise-box` | POST   | Evaluates metrics and returns a reward |
+
+
+## Request Format
+
+{
+  "user_id": "string",
+  "date": "YYYY-MM-DD",
+  "daily_metrics": {
+    "login_streak": 5,
+    "posts_created": 2,
+    "comments_written": 4,
+    "upvotes_received": 10,
+    "quizzes_completed": 1,
+    "buddies_messaged": 3,
+    "karma_spent": 20,
+    "karma_earned_today": 40
+  }
+}
+
+## Response Format
+{
+  "user_id": "string",
+  "surprise_unlocked": true,
+  "reward_karma": 50,
+  "reason": "High engagement score",
+  "rarity": "rare",
+  "box_type": "rule-based",
+  "status": "delivered"
+}
+
+## 🧠 Conditions & Logic
+- System checks metrics against config.json rules.
+
+- The highest matching rule is applied.
+
+- If no rule matches, a 10% mystery reward is triggered.
+
+## Reward Rules Table
+
+
+| **Condition**                                                              | **Reward Karma** | **Reason**                                      | **Rarity** | **Box Type**        |
+| -------------------------------------------------------------------------- | ---------------- | ----------------------------------------------- | ---------- | ------------------- |
+| `login_streak >= 3` and `posts_created >= 1` and `quizzes_completed >= 1`  | 10               | Great engagement streak with posts and quizzes! | common     | streak              |
+| `upvotes_received >= 5`                                                    | 15               | Good upvotes received today!                    | rare       | engagement          |
+| `karma_spent >= 15`                                                        | 12               | Generous karma spending!                        | common     | social              |
+| `login_streak >= 5`                                                        | 10               | Consistent daily logins!                        | common     | streak\_engager     |
+| `quizzes_completed >= 2`                                                   | 12               | Good quiz participation!                        | common     | quiz\_enthusiast    |
+| `posts_created >= 2` and `upvotes_received >= 3`                           | 18               | Prolific posting with solid feedback!           | rare       | content\_creator    |
+| `buddies_messaged >= 3` and `comments_written >= 2`                        | 15               | Active community engagement!                    | rare       | community\_champion |
+| `login_streak >= 10` and `quizzes_completed >= 5` and `posts_created >= 3` | 25               | Legendary engagement streak!                    | legendary  | legendary\_streak   |
