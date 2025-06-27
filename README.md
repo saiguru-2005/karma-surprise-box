@@ -57,10 +57,6 @@ Deployment was executed with the command
 ```
 To incorporate the volume mapping and use your image name (karma-box), replace with your actual path
 
-like example 
-```bash
-docker run -p 8000:8000 -v C:\Users\saine\OneDrive\Documents\Turtil\reward_history.db:/app/reward_history.db karma-box
-```
 ### API Endpoints
 
 | Endpoint              | Method | Description                            |
