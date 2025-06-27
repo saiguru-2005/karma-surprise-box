@@ -1,0 +1,68 @@
+{
+  "enable_ai_rewards": false,
+  "rules": [
+    {
+      "condition": "login_streak >= 3 and posts_created >= 1 and quizzes_completed >= 1",
+      "reward_karma": 10,
+      "reason": "Great engagement streak with posts and quizzes!",
+      "rarity": "common",
+      "box_type": "streak"
+    },
+    {
+      "condition": "upvotes_received >= 5",
+      "reward_karma": 15,
+      "reason": "Good upvotes received today!",
+      "rarity": "rare",
+      "box_type": "engagement"
+    },
+    {
+      "condition": "karma_spent >= 15",
+      "reward_karma": 12,
+      "reason": "Generous karma spending!",
+      "rarity": "common",
+      "box_type": "social"
+    },
+    {
+      "condition": "login_streak >= 5",
+      "reward_karma": 10,
+      "reason": "Consistent daily logins!",
+      "rarity": "common",
+      "box_type": "streak_engager"
+    },
+    {
+      "condition": "quizzes_completed >= 2",
+      "reward_karma": 12,
+      "reason": "Good quiz participation!",
+      "rarity": "common",
+      "box_type": "quiz_enthusiast"
+    },
+    {
+      "condition": "posts_created >= 2 and upvotes_received >= 3",
+      "reward_karma": 18,
+      "reason": "Prolific posting with solid feedback!",
+      "rarity": "rare",
+      "box_type": "content_creator"
+    },
+    {
+      "condition": "buddies_messaged >= 3 and comments_written >= 2",
+      "reward_karma": 15,
+      "reason": "Active community engagement!",
+      "rarity": "rare",
+      "box_type": "community_champion"
+    },
+    {
+      "condition": "login_streak >= 10 and quizzes_completed >= 5 and posts_created >= 3",
+      "reward_karma": 25,
+      "reason": "Legendary engagement streak!",
+      "rarity": "legendary",
+      "box_type": "legendary_streak"
+    }
+  ],
+  "mystery_reward": {
+    "probability": 0.10,
+    "reward_karma": 5,
+    "reason": "A lucky bonus for your activity!",
+    "rarity": "common",
+    "box_type": "mystery_luck"
+  }
+}
