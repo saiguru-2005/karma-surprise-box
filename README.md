@@ -50,8 +50,16 @@ Build the Docker Image
 docker build -t karma-box .
 ```
 Run the Container
+
+Deployment was executed with the command
 ```bash
-docker run -p 8000:8000 karma-box
+ docker run -p 8000:8000 -v <HOST_PATH_TO_DB_FILE_OR_DIRECTORY>/reward_history.db:/app/reward_history.db your_image_name 
+```
+To incorporate the volume mapping and use your image name (karma-box), replace with your actual path
+
+like example 
+```bash
+docker run -p 8000:8000 -v C:\Users\saine\OneDrive\Documents\Turtil\reward_history.db:/app/reward_history.db karma-box
 ```
 ### API Endpoints
 
