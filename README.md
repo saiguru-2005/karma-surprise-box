@@ -46,13 +46,13 @@ cd karma-surprise-box
 ## Build the Docker Image
 
 Build the Docker Image
-
+```bash
 docker build -t karma-box .
-
+```
 Run the Container
-
+```bash
 docker run -p 8000:8000 karma-box
-
+```
 ### API Endpoints
 
 | Endpoint              | Method | Description                            |
